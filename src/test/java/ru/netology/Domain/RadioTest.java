@@ -50,9 +50,9 @@ public class RadioTest {
         radio.volumeDown();
         assertEquals(0,radio.getCurrentVolume());
 
-        radio.setCurrentVolume(7);
+        radio.setCurrentVolume(6);
         radio.volumeDown();
-        assertEquals(6,radio.getCurrentVolume());
+        assertEquals(5,radio.getCurrentVolume());
 
     }
 
