@@ -90,14 +90,6 @@ public class Radio {
         this.currentVolume = currentVolume;
     }
 
-    public boolean isNext() {
-        return next;
-    }
-
-
-    public void setNext(boolean next) {
-        this.next = next;
-    }
     public void changeNextStation(){
         currentStation ++;
         if (currentStation > 9) {
@@ -109,14 +101,6 @@ public class Radio {
         if (currentStation < 0){
             currentStation = 9;
         }
-    }
-
-    public boolean isPrev() {
-        return prev;
-    }
-
-    public void setPrev(boolean prev) {
-        this.prev = prev;
     }
 
     public boolean isPlus() {
