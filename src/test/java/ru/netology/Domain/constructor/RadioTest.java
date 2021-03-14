@@ -9,57 +9,57 @@ public class RadioTest {
 
     @Test
     void shouldUpStation() {
-        Radio radio = new Radio(9,100);
+        Radio radio = new Radio("name", 9, 0, 9,true, 100, 0,100);
         radio.changeNextStation();
         assertEquals(0, radio.getCurrentStation());
     }
 
     @Test
     void shouldUpStationMiddle(){
-        Radio radio = new Radio(5,100);
+        Radio radio = new Radio("name", 9, 0, 5, true, 100, 0, 100);
         radio.changeNextStation();
         assertEquals(6,radio.getCurrentStation());
     }
 
     @Test
     void shouldDownStation() {
-        Radio radio = new Radio(0,100);
+        Radio radio = new Radio("name", 9, 0, 0, true, 100, 0, 100);
         radio.changePrevStation();
         assertEquals(9, radio.getCurrentStation());
     }
 
     @Test
     void shouldDownStationMiddle(){
-        Radio radio = new Radio(7,100);
+        Radio radio = new Radio("name", 9, 0, 7, true, 100, 0, 100);
         radio.changePrevStation();
         assertEquals(6,radio.getCurrentStation());
     }
 
     @Test
     void shouldVolumeUp() {
-        Radio radio = new Radio(0,100);
+        Radio radio = new Radio("name", 9, 0, 9,true, 100, 0,100);
         radio.volumeUp();
         assertEquals(100, radio.getCurrentVolume());
     }
 
     @Test
     void shouldVolumeUpMiddle(){
-        Radio radio = new Radio(0,3);
+        Radio radio = new Radio("name", 9, 0, 9,true, 100, 0,55);
         radio.volumeUp();
-        assertEquals(4,radio.getCurrentVolume());
+        assertEquals(56,radio.getCurrentVolume());
     }
 
     @Test
     void shouldVolumeDown() {
-        Radio radio = new Radio(0,0);
+        Radio radio = new Radio("name", 9, 0, 9,true, 100, 0,0);
         radio.volumeDown();
         assertEquals(0, radio.getCurrentVolume());
     }
 
     @Test
     void shouldVolumeDownUpMiddle(){
-        Radio radio = new Radio(0,6);
+        Radio radio = new Radio("name", 9, 0, 9,true, 100, 0,38);
         radio.volumeDown();
-        assertEquals(5,radio.getCurrentVolume());
+        assertEquals(37,radio.getCurrentVolume());
     }
 }
