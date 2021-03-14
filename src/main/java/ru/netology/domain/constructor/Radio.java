@@ -2,7 +2,7 @@ package ru.netology.domain.constructor;
 
 public class Radio {
     private String name;
-    private int maxStation = 9;
+    private int quantityStation = 10;
     private int minStation = 0;
     private int currentStation;
     private boolean on;
@@ -10,11 +10,9 @@ public class Radio {
     private int minVolume = 0;
     private int currentVolume;
 
-
-
-    public Radio(String name, int maxStation, int minStation, int currentStation, boolean on, int maxVolume, int minVolume, int currentVolume) {
+    public Radio(String name, int quantityStation, int minStation, int currentStation, boolean on, int maxVolume, int minVolume, int currentVolume) {
         this.name = name;
-        this.maxStation = maxStation;
+        this.quantityStation = quantityStation;
         this.minStation = minStation;
         this.currentStation = currentStation;
         this.on = on;
@@ -22,6 +20,7 @@ public class Radio {
         this.minVolume = minVolume;
         this.currentVolume = currentVolume;
     }
+
 
     public int getCurrentStation () {
             return currentStation;
@@ -33,14 +32,14 @@ public class Radio {
 
         public void changeNextStation () {
             currentStation++;
-            if (currentStation >= maxStation) {
+            if (currentStation >= quantityStation-1) {
                 currentStation = minStation;
             }
         }
         public void changePrevStation () {
             currentStation--;
             if (currentStation <= minStation) {
-                currentStation = maxStation;
+                currentStation = quantityStation - 1;
             }
         }
 
